@@ -708,33 +708,6 @@
 	status = "okay";
 };
 
-&rkvdec_mmu {
-	status = "okay";
-};
-
-&rkvenc {
-	venc-supply = <&vdd_logic>;
-	status = "okay";
-};
-
-&rkvenc_mmu {
-	status = "okay";
-};
-
-&rknpu {
-	rknpu-supply = <&vdd_npu>;
-	mem-supply = <&vdd_npu>;
-	status = "okay";
-};
-
-&rknpu_mmu {
-	status = "okay";
-};
-
-&vdpu {
-	status = "okay";
-};
-
 &vdpu_mmu {
 	status = "okay";
 };
