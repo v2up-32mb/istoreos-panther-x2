@@ -158,15 +158,6 @@
 	cpu-supply = <&vdd_cpu>;
 };
 
-&dfi {
-	status = "okay";
-};
-
-&dmc {
-	center-supply = <&vdd_logic>;
-	status = "okay";
-};
-
 &gpu {
 	mali-supply = <&vdd_gpu>;
 	status = "okay";
@@ -604,29 +595,20 @@
 	status = "okay";
 };
 
-&u2phy0_host {
+&usb2phy0_host {
 	status = "okay";
 };
 
-&u2phy0_otg {
+&usb2phy0_otg {
 	status = "okay";
 };
 
-&usbdrd_dwc3 {
+&usb_host0_xhci {
 	dr_mode = "host";
-	extcon = <&usb2phy0>;
 	status = "okay";
 };
 
-&usbdrd30 {
-	status = "okay";
-};
-
-&usbhost_dwc3 {
-	status = "okay";
-};
-
-&usbhost30 {
+&usb_host1_xhci {
 	status = "okay";
 };
 
@@ -663,48 +645,24 @@
 	status = "okay";
 };
 
-&reserved_memory {
-	ramoops: ramoops@110000 {
-		compatible = "ramoops";
-		reg = <0x0 0x110000 0x0 0xf0000>;
-		record-size = <0x20000>;
-		console-size = <0x80000>;
-		ftrace-size = <0x00000>;
-		pmsg-size = <0x50000>;
+/ {
+	reserved_memory: reserved-memory {
+		#address-cells = <2>;
+		#size-cells = <2>;
+		ranges;
+
+		ramoops: ramoops@110000 {
+			compatible = "ramoops";
+			reg = <0x0 0x110000 0x0 0xf0000>;
+			record-size = <0x20000>;
+			console-size = <0x80000>;
+			ftrace-size = <0x00000>;
+			pmsg-size = <0x50000>;
+		};
 	};
 };
 
-&bus_npu {
-	bus-supply = <&vdd_logic>;
-	pvtm-supply = <&vdd_cpu>;
-	status = "okay";
-};
-
-&iep {
-	status = "okay";
-};
-
-&iep_mmu {
-	status = "okay";
-};
-
-&jpegd {
-	status = "okay";
-};
-
-&jpegd_mmu {
-	status = "okay";
-};
-
-&mpp_srv {
-	status = "okay";
-};
-
-&rk_rga {
-	status = "okay";
-};
-
-&rkvdec {
+&rga {
 	status = "okay";
 };
 
